@@ -6,9 +6,10 @@
         border: solid 1px #737370;
         border-radius: 3px;
         --webkit-border-radius: 3px;
-        width: 166px;
+        width: 200px;
     }
 </style>
+
 <p>
     Sophia's drones are too simple and can recognize symbols in only single words, digits or letters.
     She wants to teach the drones to understand basic commands which are represented as "words" consisted by letters and digits.
@@ -53,24 +54,26 @@ ab23b4zz == LLDDLDLL
     <strong>Output: </strong> Is the pattern coincide with the command or not as a boolean.
 </p>
 
-
-
-<div class="for_info_only">
-    <p>
-        <strong>Example:</strong>
-    </p>
-    <pre class="brush: python">
+<p class="for_info_only">
+    <strong>Example:</strong>
+    {% if interpreter.slug == "js-node" %}
+<pre class="brush: python">
+checkCommand(42, "12a0b3e4") == true
+checkCommand(101, "ab23b4zz") == false
+</pre>
+    {% else %}
+<pre class="brush: python">
 check_command(42, "12a0b3e4") == True
 check_command(101, "ab23b4zz") == False
-    </pre>
-</div>
+</pre>
+    {% endif %}
+</p>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
     In this mission you can learn how to store more complex data in simple numbers and how to work with simple patterns.
     You can expand this concept and use more complex patterns (think about another number systems).
 </p>
-
 
 <p>
     <strong>Precondition:</strong> 0 &le; pattern &lt; 2<sup>31</sup><br>
