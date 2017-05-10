@@ -50,17 +50,17 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             },
             animationTemplateName: 'animation',
             multipleArguments: true,
-            tryit: function(){
-                var this_e = this;
+            tryit: function(this_e){
                 $tryit = $(this_e.extSetHtmlTryIt(this_e.getTemplate('tryit')));
 
-                var tryitDataInput = $tryit.find('.tryit-content');
-                tryitDataInput.focus();
+                var tryitPatternInput = $tryit.find('.tryit_pattern_input');
+                var tryitCommandInput = $tryit.find('.tryit_command_input');
+                tryitPatternInput.focus();
 
                 $tryit.find('.bn-check').click(function (e) {
-                    var password = passwordInput.val();
-                    var tryitData = tryitDataInput.val();
-                    this_e.extSendToConsoleCheckiO(tryitData);
+                    var tryitPattern = parseInt(tryitPatternInput.val());
+                    var tryitCommand = tryitCommandInput.val();
+                    this_e.extSendToConsoleCheckiO(tryitPattern, tryitCommand);
                     e.stopPropagation();
                     return false;
                 });
